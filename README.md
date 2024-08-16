@@ -17,8 +17,8 @@
 
 - [x] react-router-dom
 - [x] node-fetch
-- [] Chakra Ui
-- [] helmet-async
+- [x] helmet-async
+- [x] Chakra Ui
 - [] react-spinners
 - [] react-icons
 - [] react-hook-form

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { allParkingInfo, parkingInfo } from "../../api";
 import { Map } from "../../Map";
+import { PageTitle } from "../../components/PageTitle";
 
 export const Home = () => {
   const [parkData, setParkData] = useState();
@@ -34,6 +35,7 @@ export const Home = () => {
         "loading"
       ) : (
         <>
+          <PageTitle title={"Home"} />
           <div>Home</div>
           <Map />
         </>
