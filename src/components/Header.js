@@ -16,6 +16,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
+import { routes } from "../routes";
 
 export const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -32,7 +33,7 @@ export const Header = () => {
         p={"0 20px"}
       >
         <Flex justifyContent={"space-between"} alignItems={"center"}>
-          <Box fontSize="20px" fontWeight={700} borderRadius={50}>
+          <Box fontSize="18px" fontWeight={700}>
             <Link to={"/"}>BUSAN_GGONG_PARKING</Link>
           </Box>
           <Box>
@@ -41,6 +42,7 @@ export const Header = () => {
               colorScheme="blackAlpha"
               onClick={onOpen}
               borderRadius={50}
+              aria-label="Open menu"
             >
               <HamburgerIcon />
             </Button>
@@ -51,17 +53,23 @@ export const Header = () => {
               finalFocusRef={btnRef}
             >
               <DrawerOverlay />
-              <DrawerContent>
+              <DrawerContent maxW="450px" margin={0} style={{ width: "80%" }}>
                 <DrawerCloseButton />
-                <DrawerHeader>Create your account</DrawerHeader>
+                <DrawerHeader>Menu</DrawerHeader>
 
-                <DrawerBody></DrawerBody>
+                <DrawerBody fontSize={"20px"} fontWeight={700}>
+                  <Box marginBottom={4}>
+                    <Link to={routes.home}>HOME</Link>
+                  </Box>
+                  <Box>
+                    <Link to={routes.search}>SEARCH</Link>
+                  </Box>
+                </DrawerBody>
 
                 <DrawerFooter>
                   <Button variant="outline" mr={3} onClick={onClose}>
-                    Cancel
+                    Exit
                   </Button>
-                  <Button colorScheme="blue">Save</Button>
                 </DrawerFooter>
               </DrawerContent>
             </Drawer>

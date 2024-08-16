@@ -5,6 +5,11 @@ const config = {
   useSystemColorMode: false,
 };
 
+const fonts = {
+  heading: `"Noto Serif KR", serif`,
+  body: `"Noto Serif KR", serif`,
+};
+
 const { Button, Modal } = chakraTheme.components;
 
 const components = {
@@ -15,6 +20,7 @@ const components = {
 const _theme = extendBaseTheme({
   components,
   config,
+  fonts,
 });
 
 export default _theme;
