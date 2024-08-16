@@ -15,8 +15,8 @@
 
 ### 설치할 npm
 
-- [] react-router-dom
-- [] node-fetch
+- [x] react-router-dom
+- [x] node-fetch
 - [] styled-components
 - [] styled-reset
 - [] helmet-async
