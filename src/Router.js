@@ -4,10 +4,12 @@ import { Detail } from "./pages/Detail/Detail";
 import { Search } from "./pages/Search/Search";
 import { PageNotFound } from "./pages/PageNotFound";
 import { routes } from "./routes";
+import { Header } from "./components/Header";
 
 function Router() {
   return (
     <HashRouter>
+      <Header />
       <Routes>
         <Route path={routes.home} element={<Home />}></Route>
         <Route path={routes.detail} element={<Detail />}></Route>

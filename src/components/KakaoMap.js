@@ -1,3 +1,4 @@
+import { Box, Container } from "@chakra-ui/react";
 import { useEffect } from "react";
 
 const { kakao } = window;
@@ -18,5 +19,5 @@ export const KakaoMap = () => {
     }
   }, []);
 
-  return <div id="map" style={{ width: "500px", height: "400px" }}></div>;
+  return <Box id="map" w="100%" h="100%" zIndex={98} />;
 };

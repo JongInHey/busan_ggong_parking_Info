@@ -19,7 +19,7 @@
 - [x] node-fetch
 - [x] helmet-async
 - [x] Chakra Ui
+- [x] chakra-ui/icons
 - [] react-spinners
-- [] react-icons
 - [] react-hook-form
 - [] gh-pages

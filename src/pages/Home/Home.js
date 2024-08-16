@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { allParkingInfo, parkingInfo } from "../../api";
-import {  KakaoMap } from "../../components/KakaoMap";
+import { KakaoMap } from "../../components/KakaoMap";
 import { PageTitle } from "../../components/PageTitle";
-import { Container } from "@chakra-ui/react";
+import { Center, Container, Heading, VStack } from "@chakra-ui/react";
 
 export const Home = () => {
   const [parkData, setParkData] = useState();
@@ -14,12 +14,12 @@ export const Home = () => {
       const parkingData = await parkingInfo();
       const parkingAllData = await allParkingInfo();
 
-      const getData = parkingData[`response`];
-      const getItem = getData["body"];
+      const getData = parkingData["response"];
+      const getItem = getData.body;
       const { item } = getItem.items;
 
       const allgetData = parkingAllData[`response`];
-      const getAllItem = allgetData["body"];
+      const getAllItem = allgetData.body;
       const { item: allItem } = getAllItem.items;
 
       setParkData(item);
@@ -28,7 +28,7 @@ export const Home = () => {
     })();
   }, []);
   // console.log(parkData);
-  console.log(parkAllData);
+  // console.log(parkAllData);
 
   return (
     <>
@@ -37,8 +37,9 @@ export const Home = () => {
       ) : (
         <>
           <PageTitle title={"Home"} />
-          <Container>Home</Container>
-          <KakaoMap />
+          <Container maxW={450} h={"100vh"} margin="0 auto">
+            <KakaoMap />
+          </Container>
         </>
       )}
     </>
