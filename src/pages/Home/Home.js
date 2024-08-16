@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { allParkingInfo, parkingInfo } from "../../api";
-import { Map } from "../../Map";
+import {  KakaoMap } from "../../components/KakaoMap";
 import { PageTitle } from "../../components/PageTitle";
+import { Container } from "@chakra-ui/react";
 
 export const Home = () => {
   const [parkData, setParkData] = useState();
@@ -36,8 +37,8 @@ export const Home = () => {
       ) : (
         <>
           <PageTitle title={"Home"} />
-          <div>Home</div>
-          <Map />
+          <Container>Home</Container>
+          <KakaoMap />
         </>
       )}
     </>

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 const { kakao } = window;
 
-export const Map = () => {
+export const KakaoMap = () => {
   useEffect(() => {
     try {
       const container = document.getElementById("map"); //지도를 담을 영역의 DOM 레퍼런스
