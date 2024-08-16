@@ -2,10 +2,10 @@
 
 ### 작업 내용
 
-- [] Router 설정
+- [x] Router 설정
+- [x] Api 설정 & javascript API 설정
 - [] 컴포넌트, 폴더 설정
 - [] globalStyled, 웹 폰트 설정
-- [] Api 설정 & javascript API 설정
 - [] Header, Footer 구성
 - [] Helmet 타이틀 설정
 - [] Loading 설정
@@ -17,8 +17,7 @@
 
 - [x] react-router-dom
 - [x] node-fetch
-- [] styled-components
-- [] styled-reset
+- [] Chakra Ui
 - [] helmet-async
 - [] react-spinners
 - [] react-icons
