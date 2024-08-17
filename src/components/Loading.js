@@ -1,4 +1,4 @@
-import { Box, Center, Container, Flex } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 import { ClimbingBoxLoader } from "react-spinners";
 
 export const Loading = () => {

@@ -16,6 +16,7 @@ import { allParkingInfo } from "../../api";
 import { useForm } from "react-hook-form";
 import { MdOutlineSearch } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { Loading } from "../../components/Loading";
 
 export const Search = () => {
   const [searchData, setSearchData] = useState();
@@ -47,7 +48,7 @@ export const Search = () => {
       console.error(error);
     }
   };
-  console.log(searchData);
+  // console.log(searchData);
   const nullKeyword = watch("keyword");
 
   return (
@@ -112,32 +113,40 @@ export const Search = () => {
               </Text>
 
               <VStack>
-                {searchData.map((data) => (
-                  <Box
-                    key={data.mgntNum}
-                    w="100%"
-                    borderRadius="20px"
-                    p={4}
-                    mt={5}
-                    lineHeight="28px"
-                    bgColor={"#f9f9f9"}
-                  >
-                    <Link to={`/detail/${data.mgntNum}`}>
-                      <Heading fontWeight="bold" fontSize="18px">
-                        {data.pkNam}
-                      </Heading>
+                {isLoading ? (
+                  <Loading />
+                ) : (
+                  <>
+                    {searchData.map((data) => (
+                      <Box
+                        key={data.mgntNum}
+                        w="100%"
+                        borderRadius="20px"
+                        p={4}
+                        mt={5}
+                        lineHeight="28px"
+                        bgColor={"#f9f9f9"}
+                      >
+                        <Link to={`/detail/${data.mgntNum}`}>
+                          <Heading fontWeight="bold" fontSize="18px">
+                            {data.pkNam}
+                          </Heading>
 
-                      {data.jibunAddr === "-" || data.jibunAddr === "" ? (
-                        ""
-                      ) : (
-                        <Text fontSize="14px">부산광역시 {data.jibunAddr}</Text>
-                      )}
-                      <Text fontSize="15px" fontWeight="medium">
-                        {data.pkBascTime}분 당 {data.tenMin}원
-                      </Text>
-                    </Link>
-                  </Box>
-                ))}
+                          {data.jibunAddr === "-" || data.jibunAddr === "" ? (
+                            ""
+                          ) : (
+                            <Text fontSize="14px">
+                              부산광역시 {data.jibunAddr}
+                            </Text>
+                          )}
+                          <Text fontSize="15px" fontWeight="medium">
+                            {data.pkBascTime}분 당 {data.tenMin}원
+                          </Text>
+                        </Link>
+                      </Box>
+                    ))}
+                  </>
+                )}
               </VStack>
             </Box>
           )}

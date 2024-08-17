@@ -21,13 +21,20 @@ import {
   MdOutlineHome,
   MdOutlineMenu,
 } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { routes } from "../routes";
 import React from "react";
 
 export const Footer = ({ onPanTo }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
+  const { pathname } = useLocation();
+
+  const handlePenTo = () => {
+    if (pathname === routes.home) {
+      onPanTo();
+    }
+  };
 
   return (
     <Center>
@@ -46,41 +53,46 @@ export const Footer = ({ onPanTo }) => {
         <Flex alignItems={"center"} justifyContent={"space-evenly"} h={"100%"}>
           <Link to={routes.home}>
             <IconButton
-              as={MdOutlineHome}
+              icon={<MdOutlineHome />}
               variant="ghost"
               boxSize={6}
+              fontSize="24px"
               color={"gray.500"}
             />
           </Link>
           <IconButton
-            as={MdOutlineLocationOn}
+            icon={<MdOutlineLocationOn />}
             variant="ghost"
             boxSize={6}
+            fontSize="24px"
             color={"gray.500"}
-            onClick={onPanTo}
+            onClick={handlePenTo}
             cursor={"pointer"}
           />
           <Link to={routes.search}>
             <IconButton
-              as={MdOutlineSearch}
+              icon={<MdOutlineSearch />}
               isRound={true}
-              boxSize={9}
+              boxSize={10}
+              fontSize="34px"
               color={"white"}
               bg={"#ffa825"}
               _hover={{ bg: "#ffbf5f" }}
             />
           </Link>
           <IconButton
-            as={MdOutlineStarBorder}
+            icon={<MdOutlineStarBorder />}
             variant="ghost"
             boxSize={6}
+            fontSize="24px"
             color={"gray.500"}
             cursor={"pointer"}
           />
           <IconButton
-            as={MdOutlineMenu}
+            icon={<MdOutlineMenu />}
             variant="ghost"
             boxSize={6}
+            fontSize="24px"
             color={"gray.500"}
             ref={btnRef}
             onClick={onOpen}
