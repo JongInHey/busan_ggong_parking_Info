@@ -10,17 +10,27 @@ const fonts = {
   body: `"Noto Serif KR", serif`,
 };
 
-const { Button, Modal } = chakraTheme.components;
+const { Button, Modal, FormControl, FormLabel, Input } = chakraTheme.components;
 
 const components = {
   Button,
   Modal,
+  FormControl,
+  FormLabel: {
+    baseStyle: {
+      fontWeight: "medium",
+      fontSize: "lg",
+    },
+  },
+  Input,
 };
 
 const _theme = extendBaseTheme({
   components,
   config,
   fonts,
+  FormLabel,
+  Input,
 });
 
 export default _theme;

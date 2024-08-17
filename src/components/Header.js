@@ -9,12 +9,16 @@ export const Header = () => {
         position={"absolute"}
         top={"10px"}
         zIndex={99}
-        maxW={"450px"}
+        maxW={"240px"}
         w={"100%"}
-        p={"0 15px"}
+        marginRight={"95px"}
       >
         <Flex justifyContent={"space-between"} alignItems={"center"}>
-          <Box fontSize="18px" fontWeight={700}>
+          <Box
+            fontSize="16px"
+            fontWeight={700}
+            backdropFilter={"saturate(180%) blur(20px)"}
+          >
             <Link to={"/"}>BUSAN_GGONG_PARKING</Link>
           </Box>
         </Flex>

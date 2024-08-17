@@ -1,34 +1,30 @@
 import { useEffect, useState } from "react";
-import { allParkingInfo, parkingInfo } from "../../api";
+import { allParkingInfo } from "../../api";
 import { KakaoMap } from "../../components/KakaoMap";
 import { PageTitle } from "../../components/PageTitle";
 import { Container } from "@chakra-ui/react";
+import { Loading } from "../../components/Loading";
 
 export const Home = ({ onMapLoad }) => {
-  const [parkData, setParkData] = useState();
   const [parkAllData, setParkAllData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
-      const parkingData = await parkingInfo();
       const parkingAllData = await allParkingInfo();
 
-      const getData = parkingData?.response?.body?.items?.item;
       const allgetData = parkingAllData?.response?.body?.items?.item;
 
-      setParkData(getData);
       setParkAllData(allgetData);
       setIsLoading(false);
     })();
   }, []);
-  console.log(parkData);
   // console.log(parkAllData);
 
   return (
     <>
       {isLoading ? (
-        "loading"
+        <Loading />
       ) : (
         <>
           <PageTitle title={"Home"} />
