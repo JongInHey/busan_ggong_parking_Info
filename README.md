@@ -20,6 +20,7 @@
 - [x] helmet-async
 - [x] Chakra Ui
 - [x] chakra-ui/icons
+- [x] react-icons
 - [] react-spinners
 - [] react-hook-form
 - [] gh-pages
