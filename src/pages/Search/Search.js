@@ -112,7 +112,7 @@ export const Search = () => {
                 {keyData} 검색 결과 입니다!
               </Text>
 
-              <VStack>
+              <VStack gap={6} pb="90px">
                 {isLoading ? (
                   <Loading />
                 ) : (
@@ -124,7 +124,7 @@ export const Search = () => {
                         borderRadius="20px"
                         p={4}
                         mt={5}
-                        lineHeight="28px"
+                        lineHeight="23px"
                         bgColor={"#f9f9f9"}
                       >
                         <Link to={`/detail/${data.mgntNum}`}>
@@ -135,11 +135,11 @@ export const Search = () => {
                           {data.jibunAddr === "-" || data.jibunAddr === "" ? (
                             ""
                           ) : (
-                            <Text fontSize="14px">
+                            <Text fontSize="14px" mt="5px">
                               부산광역시 {data.jibunAddr}
                             </Text>
                           )}
-                          <Text fontSize="15px" fontWeight="medium">
+                          <Text fontSize="15px" fontWeight="medium" mt="10px">
                             {data.pkBascTime}분 당 {data.tenMin}원
                           </Text>
                         </Link>
