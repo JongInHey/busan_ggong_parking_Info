@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import { useEffect, useRef } from "react";
 import { useCurrentPos } from "../lib/useCurrentPos";
+import { useNavigate } from "react-router-dom";
 
 const { kakao } = window;
 
@@ -9,6 +10,7 @@ export const KakaoMap = ({ onMapLoad, parkAllData }) => {
   const mapRef = useRef(null);
   const overlaysRef = useRef([]);
   const markersRef = useRef([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (lat && lon) {
@@ -43,7 +45,6 @@ export const KakaoMap = ({ onMapLoad, parkAllData }) => {
         const closeAllOverlays = () => {
           overlaysRef.current.forEach((overlay) => overlay.setMap(null));
         };
-        kakao.maps.event.addListener(map, "click", closeAllOverlays);
 
         const clearMarkers = () => {
           markersRef.current.forEach((marker) => marker.setMap(null));
@@ -91,6 +92,7 @@ export const KakaoMap = ({ onMapLoad, parkAllData }) => {
               <ul style="list-style-type: none; padding: 0; margin: 0;">
                 <li style="margin-bottom: 5px; font-size: 14px;"><strong>주소 : </strong> <span style="font-weight: 400;">부산광역시 ${park.jibunAddr}<span></li>
                 <li style="margin-bottom: 5px; font-size: 14px;"><strong>요금 : </strong><span style="font-weight: 400;">${park.pkBascTime} 분 당 ${park.tenMin}원<span></li>
+                <li class="add" style="margin-bottom: 5px; font-size: 14px; font-weight: 700; color: #ffa825; cursor: pointer;">자세히 보기</li>
               </ul>
               <div style="text-align: right; margin-top: 10px;">
                 <button style="
@@ -109,12 +111,16 @@ export const KakaoMap = ({ onMapLoad, parkAllData }) => {
                 map: null, // 초기에는 숨겨진 상태
               });
 
-              kakao.maps.event.addListener(marker, "click", function () {
+              kakao.maps.event.addListener(marker, "click", () => {
                 closeAllOverlays();
                 overlay.setMap(map);
               });
 
-              content.querySelector(".close").onclick = function () {
+              content.querySelector(".add").onclick = () => {
+                navigate(`/detail/${park.mgntNum}`);
+              };
+
+              content.querySelector(".close").onclick = () => {
                 overlay.setMap(null);
               };
               overlaysRef.current.push(overlay);
