@@ -141,7 +141,7 @@ export const KakaoMap = ({ onMapLoad, parkAllData }) => {
         console.log(error);
       }
     }
-  }, [lat, lon, onMapLoad, parkAllData]);
+  }, [lat, lon, onMapLoad, parkAllData, navigate]);
 
   return (
     <>

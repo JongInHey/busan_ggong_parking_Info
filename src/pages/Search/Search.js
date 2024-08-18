@@ -72,7 +72,8 @@ export const Search = () => {
                 type="text"
                 placeholder="Search"
                 _placeholder={{ color: "gray.400" }}
-                variant="flushed"
+                variant="filled"
+                borderRadius={20}
                 size="md"
                 color={"#222"}
                 fontWeight={"bold"}
@@ -88,8 +89,8 @@ export const Search = () => {
 
               <Button
                 position={"absolute"}
-                top={110}
-                right={30}
+                top={115}
+                right="20px"
                 colorScheme="orange"
                 onClick={handleSubmit(onSearchResult)}
                 fontSize={"4xl"}
