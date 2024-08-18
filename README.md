@@ -7,8 +7,8 @@
 - [x] chakra theme, font 설정
 - [x] Header, Footer 구성
 - [x] Helmet 타이틀 설정
-- [] 컴포넌트, 폴더 설정
-- [] Loading 설정
+- [x] Loading 설정
+- [x] 컴포넌트, 폴더 설정
 - [] 각 페이지 ui구성 & 설정
 - [] 404 page 구성
 - [] deploy
@@ -22,5 +22,5 @@
 - [x] chakra-ui/icons
 - [x] react-icons
 - [x] react-hook-form
-- [] react-spinners
+- [x] react-spinners
 - [] gh-pages

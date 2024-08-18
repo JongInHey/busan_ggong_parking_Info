@@ -22,6 +22,7 @@ function Router() {
   const panTo = () => {
     const moveLatLon = new kakao.maps.LatLng(lat, lon);
 
+    map.setLevel(3);
     map.panTo(moveLatLon);
   };
 
