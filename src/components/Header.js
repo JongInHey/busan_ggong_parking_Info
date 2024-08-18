@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
-    <Center position={"relative"}>
+    <Center>
       <Container
         position={"absolute"}
         top={"10px"}
         zIndex={99}
         maxW={"240px"}
         w={"100%"}
-        marginRight={"95px"}
+        p={"0 15px"}
+        mr={"110px"}
       >
         <Flex justifyContent={"space-between"} alignItems={"center"}>
           <Box
