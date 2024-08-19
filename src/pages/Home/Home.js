@@ -14,8 +14,12 @@ export const Home = ({ onMapLoad }) => {
       const parkingAllData = await allParkingInfo();
 
       const allgetData = parkingAllData?.response?.body?.items?.item;
+      const dataAddUniqueIds = allgetData.map((item, index) => ({
+        ...item,
+        id: index,
+      }));
 
-      setParkAllData(allgetData);
+      setParkAllData(dataAddUniqueIds);
       setIsLoading(false);
     })();
   }, []);

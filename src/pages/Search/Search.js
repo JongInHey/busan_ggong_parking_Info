@@ -5,18 +5,15 @@ import {
   FormControl,
   FormHelperText,
   FormLabel,
-  Heading,
   Input,
   Text,
-  VStack,
 } from "@chakra-ui/react";
 import { PageTitle } from "../../components/PageTitle";
 import { useState } from "react";
 import { allParkingInfo } from "../../api";
 import { useForm } from "react-hook-form";
 import { MdOutlineSearch } from "react-icons/md";
-import { Link } from "react-router-dom";
-import { Loading } from "../../components/Loading";
+import { SearchResult } from "./components/SearchResult";
 
 export const Search = () => {
   const [searchData, setSearchData] = useState();
@@ -35,10 +32,16 @@ export const Search = () => {
     try {
       const parkingAllData = await allParkingInfo();
       const allgetData = parkingAllData?.response?.body?.items?.item;
+      const dataAddUniqueIds = allgetData.map((item, index) => ({
+        ...item,
+        id: index,
+      }));
 
-      const searchResult = allgetData.filter(
+      const searchResult = dataAddUniqueIds.filter(
         (item) =>
-          item.pkNam.includes(keyword) || item.jibunAddr.includes(keyword)
+          item.pkNam.includes(keyword) ||
+          item.jibunAddr.includes(keyword) ||
+          item.doroAddr.includes(keyword)
       );
 
       setSearchData(searchResult);
@@ -49,7 +52,7 @@ export const Search = () => {
     }
   };
   const nullKeyword = watch("keyword");
-  console.log(searchData);
+  // console.log(searchData);
 
   return (
     <>
@@ -109,48 +112,11 @@ export const Search = () => {
           )}
 
           {searchData?.length > 0 && (
-            <Box mt={8}>
-              <Text fontSize="lg" fontWeight="bold">
-                {keyData} 검색 결과 입니다!
-              </Text>
-
-              <VStack gap={6} pb="90px">
-                {isLoading ? (
-                  <Loading />
-                ) : (
-                  <>
-                    {searchData.map((data) => (
-                      <Box
-                        key={data.mgntNum}
-                        w="100%"
-                        borderRadius="20px"
-                        p={4}
-                        mt={5}
-                        lineHeight="23px"
-                        bgColor={"#f9f9f9"}
-                      >
-                        <Link to={`/detail/${data.mgntNum}`}>
-                          <Heading fontWeight="bold" fontSize="18px">
-                            {data.pkNam}
-                          </Heading>
-
-                          {data.jibunAddr === "-" || data.jibunAddr === "" ? (
-                            ""
-                          ) : (
-                            <Text fontSize="14px" mt="5px">
-                              부산광역시 {data.jibunAddr}
-                            </Text>
-                          )}
-                          <Text fontSize="15px" fontWeight="medium" mt="10px">
-                            {data.pkBascTime}분 당 {data.tenMin}원
-                          </Text>
-                        </Link>
-                      </Box>
-                    ))}
-                  </>
-                )}
-              </VStack>
-            </Box>
+            <SearchResult
+              searchData={searchData}
+              keyData={keyData}
+              isLoading={isLoading}
+            />
           )}
         </Box>
       </Container>
