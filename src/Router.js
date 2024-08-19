@@ -22,10 +22,9 @@ function Router() {
   const panTo = () => {
     const moveLatLon = new kakao.maps.LatLng(lat, lon);
 
-    map.setLevel(3);
-    map.panTo(moveLatLon);
+    map?.setLevel(3);
+    map?.panTo(moveLatLon);
   };
-
   return (
     <HashRouter>
       <Header />
@@ -38,7 +37,8 @@ function Router() {
         <Route path={routes.search} element={<Search />}></Route>
         <Route path="/*" element={<PageNotFound />}></Route>
       </Routes>
-      <Footer onPanTo={panTo} />
+      <Footer />
+      {/* onPanTo={panTo} */}
     </HashRouter>
   );
 }

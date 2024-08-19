@@ -48,8 +48,8 @@ export const Search = () => {
       console.error(error);
     }
   };
-  // console.log(searchData);
   const nullKeyword = watch("keyword");
+  console.log(searchData);
 
   return (
     <>
@@ -59,7 +59,7 @@ export const Search = () => {
           w={"100%"}
           h={"100%"}
           position={"relative"}
-          // bgColor={"#f9f9f9"}
+          bgColor={"#fdfdfd"}
           p={5}
           pt={20}
         >
@@ -95,6 +95,7 @@ export const Search = () => {
                 onClick={handleSubmit(onSearchResult)}
                 fontSize={"4xl"}
                 borderRadius="full"
+                opacity={0.8}
               >
                 <MdOutlineSearch />
               </Button>

@@ -25,17 +25,18 @@ import { Link, useLocation } from "react-router-dom";
 import { routes } from "../routes";
 import React from "react";
 
-export const Footer = ({ onPanTo }) => {
+export const Footer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   const { pathname } = useLocation();
 
-  const handlePenTo = () => {
-    if (pathname === routes.home) {
-      onPanTo();
-    }
-  };
-
+  // const handlePenTo = () => {
+  //   if (pathname === routes.home) {
+  //     onPanTo();
+  //   }
+  // };
+  // const text = onPanTo();
+  // console.log(text);
   return (
     <Center>
       <Container
@@ -66,7 +67,7 @@ export const Footer = ({ onPanTo }) => {
             boxSize={6}
             fontSize="24px"
             color={"gray.500"}
-            onClick={handlePenTo}
+            // onClick={handlePenTo}
             cursor={"pointer"}
           />
           <Link to={routes.search}>
