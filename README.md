@@ -23,4 +23,4 @@
 - [x] react-icons
 - [x] react-hook-form
 - [x] react-spinners
-- [] gh-pages
+- [x] gh-pages
