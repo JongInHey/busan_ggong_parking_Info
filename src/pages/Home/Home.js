@@ -13,7 +13,6 @@ export const Home = ({ onMapLoad }) => {
     (async () => {
       try {
         const parkingAllData = await allParkingInfo();
-
         const allgetData = parkingAllData?.response?.body?.items?.item;
         const dataAddUniqueIds = allgetData.map((item, index) => ({
           ...item,

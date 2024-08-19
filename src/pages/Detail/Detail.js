@@ -78,17 +78,18 @@ export const Detail = () => {
                 w="100%"
                 borderRadius="20px"
                 p={5}
-                pb="90px"
                 mt={5}
                 lineHeight="23px"
                 bgColor={"#f9f9f9"}
               >
                 <DetailInfo detailData={detailData} />
-
-                {detailData.xCdnt !== "-" && detailData.yCdnt !== "-" && (
-                  <Map findData={detailData} />
-                )}
               </Box>
+
+              {detailData.xCdnt !== "-" && detailData.yCdnt !== "-" && (
+                <Box w="100%" pb="80px" mt={2}>
+                  <Map findData={detailData} />
+                </Box>
+              )}
             </Box>
           </Container>
         </>
