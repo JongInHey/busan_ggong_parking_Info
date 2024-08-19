@@ -30,5 +30,5 @@ export const Map = ({ findData }) => {
       }
     })();
   }, [findData]);
-  return <Box id="map" w="100%" height="500px" mt={10} />;
+  return <Box id="map" w="100%" height="400px" mt={10} />;
 };

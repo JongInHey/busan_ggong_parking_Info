@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const SearchResult = ({ searchData, keyData, isLoading }) => {
   return (
-    <Box mt={8}>
+    <Box mt={8} wordBreak="keep-all">
       <Text fontSize="lg" fontWeight="bold">
         {keyData} 검색 결과 입니다!
       </Text>

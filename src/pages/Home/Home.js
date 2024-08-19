@@ -11,16 +11,20 @@ export const Home = ({ onMapLoad }) => {
 
   useEffect(() => {
     (async () => {
-      const parkingAllData = await allParkingInfo();
+      try {
+        const parkingAllData = await allParkingInfo();
 
-      const allgetData = parkingAllData?.response?.body?.items?.item;
-      const dataAddUniqueIds = allgetData.map((item, index) => ({
-        ...item,
-        id: index,
-      }));
+        const allgetData = parkingAllData?.response?.body?.items?.item;
+        const dataAddUniqueIds = allgetData.map((item, index) => ({
+          ...item,
+          id: index,
+        }));
 
-      setParkAllData(dataAddUniqueIds);
-      setIsLoading(false);
+        setParkAllData(dataAddUniqueIds);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
     })();
   }, []);
   // console.log(parkAllData);

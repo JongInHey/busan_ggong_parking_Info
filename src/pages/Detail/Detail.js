@@ -40,13 +40,17 @@ export const Detail = () => {
       ) : (
         <>
           <PageTitle title={"Detail"} />
-          <Container maxW={"450px"} h={"100vh"} margin={"0 auto"}>
+          <Container
+            maxW={"450px"}
+            h={"100vh"}
+            margin={"0 auto"}
+            wordBreak="keep-all"
+          >
             <Box
               w={"100%"}
               h={"100%"}
               position={"relative"}
               bgColor={"#fdfdfd"}
-              p={5}
               pt={20}
             >
               <Box
@@ -73,7 +77,7 @@ export const Detail = () => {
               <Box
                 w="100%"
                 borderRadius="20px"
-                p={4}
+                p={5}
                 pb="90px"
                 mt={5}
                 lineHeight="23px"
