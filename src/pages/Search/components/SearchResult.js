@@ -30,7 +30,9 @@ export const SearchResult = ({ searchData, keyData, isLoading }) => {
                   </Heading>
 
                   {data.jibunAddr === "-" || data.jibunAddr === "" ? (
-                    ""
+                    <Text fontSize="14px" mt="5px">
+                      부산광역시 {data.doroAddr}
+                    </Text>
                   ) : (
                     <Text fontSize="14px" mt="5px">
                       부산광역시 {data.jibunAddr}

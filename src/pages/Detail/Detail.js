@@ -61,7 +61,9 @@ export const Detail = () => {
                 </Heading>
 
                 {detailData.jibunAddr === "-" || detailData.jibunAddr === "" ? (
-                  ""
+                  <Text fontSize="14px" mt="5px">
+                    부산광역시 {detailData.doroAddr}
+                  </Text>
                 ) : (
                   <Text fontSize="14px" mt="5px">
                     부산광역시 {detailData.jibunAddr}
