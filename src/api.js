@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 
 const baseUrl =
-  "http://apis.data.go.kr/6260000/BusanPblcPrkngInfoService/getPblcPrkngInfo?";
+  "https://apis.data.go.kr/6260000/BusanPblcPrkngInfoService/getPblcPrkngInfo?";
 
 const ServiceKey =
   "XFeZDljdQ%2B0MIJLE7iNgkxicxcla%2BQl%2F9i8veOL79Bjk5RNoucEbjPVL1I2cTNjttfKeqsUgnEEpTx8n9lGLyQ%3D%3D";
