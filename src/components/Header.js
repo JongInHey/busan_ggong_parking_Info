@@ -12,7 +12,7 @@ export const Header = () => {
         maxW={"240px"}
         w={"100%"}
         p={"0 15px"}
-        mr={"110px"}
+        mr={"120px"}
       >
         <Flex justifyContent={"space-between"} alignItems={"center"}>
           <Box

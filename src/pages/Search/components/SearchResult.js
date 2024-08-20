@@ -38,40 +38,48 @@ export const SearchResult = ({ searchData, keyData, isLoading }) => {
                       부산광역시 {data.jibunAddr}
                     </Text>
                   )}
-                  <Text
-                    fontSize="15px"
-                    fontWeight="semibold"
-                    mt="10px"
-                    fontFamily="Noto Sans KR, sans-serif"
-                  >
-                    {data.tenMin !== "-" ? (
-                      <>
-                        <Box
-                          bgColor="#ffa825"
-                          color="#fff"
-                          w={28}
-                          p={1}
-                          textAlign="center"
-                          borderRadius={20}
+
+                  {data.tenMin !== "-" ? (
+                    <>
+                      <Box
+                        bgColor="#ffa825"
+                        color="#fff"
+                        w={28}
+                        p={1}
+                        mt="10px"
+                        textAlign="center"
+                        borderRadius={20}
+                      >
+                        <Text
+                          fontSize="15px"
+                          fontWeight="semibold"
+                          fontFamily="Noto Sans KR, sans-serif"
                         >
                           {data.pkBascTime}분 당 {data.tenMin}원
-                        </Box>
-                      </>
-                    ) : (
-                      <>
-                        <Box
-                          bgColor="#ffa825"
-                          color="#fff"
-                          w={28}
-                          p={1}
-                          textAlign="center"
-                          borderRadius={20}
+                        </Text>
+                      </Box>
+                    </>
+                  ) : (
+                    <>
+                      <Box
+                        bgColor="#ffa825"
+                        color="#fff"
+                        w={28}
+                        p={1}
+                        mt="10px"
+                        textAlign="center"
+                        borderRadius={20}
+                      >
+                        <Text
+                          fontSize="15px"
+                          fontWeight="semibold"
+                          fontFamily="Noto Sans KR, sans-serif"
                         >
                           {data.pkBascTime}분 당 {data.tenMin}
-                        </Box>
-                      </>
-                    )}
-                  </Text>
+                        </Text>
+                      </Box>
+                    </>
+                  )}
                 </Link>
               </Box>
             ))}

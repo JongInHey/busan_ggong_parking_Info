@@ -11,7 +11,6 @@ import {
   DrawerHeader,
   DrawerOverlay,
   Box,
-  Button,
   useDisclosure,
 } from "@chakra-ui/react";
 import {
@@ -24,6 +23,7 @@ import {
 import { Link, useLocation } from "react-router-dom";
 import { routes } from "../routes";
 import React from "react";
+import { AiOutlineCar } from "react-icons/ai";
 
 export const Footer = ({ onPanTo }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -108,11 +108,13 @@ export const Footer = ({ onPanTo }) => {
         >
           <DrawerOverlay />
           <DrawerContent maxW="450px" margin={0} style={{ width: "80%" }}>
-            <DrawerCloseButton />
-            <DrawerHeader fontSize={"18px"}>Menu</DrawerHeader>
+            <DrawerCloseButton top={6} right={7} />
+            <DrawerHeader fontSize={"70px"}>
+              <AiOutlineCar />
+            </DrawerHeader>
 
-            <DrawerBody fontSize={"20px"} fontWeight={700}>
-              <Box marginBottom={4}>
+            <DrawerBody fontSize={"20px"} fontWeight={700} pt={16}>
+              <Box marginBottom={7}>
                 <Link to={routes.home} onClick={onClose}>
                   HOME
                 </Link>
@@ -124,10 +126,12 @@ export const Footer = ({ onPanTo }) => {
               </Box>
             </DrawerBody>
 
-            <DrawerFooter>
-              <Button variant="outline" mr={3} onClick={onClose}>
-                Exit
-              </Button>
+            <DrawerFooter
+              justifyContent="center"
+              fontSize={"14px"}
+              bgColor="#f7f7f7"
+            >
+              &copy; 2024․ JongInHey.
             </DrawerFooter>
           </DrawerContent>
         </Drawer>
