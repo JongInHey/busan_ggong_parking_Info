@@ -59,6 +59,7 @@ export const Detail = () => {
                 p={4}
                 lineHeight="23px"
                 bgColor={"#f9f9f9"}
+                boxShadow="0 2px 6px rgba(0,0,0,0.1)"
               >
                 <Heading fontWeight="bold" fontSize="18px">
                   {detailData.pkNam}
@@ -81,7 +82,7 @@ export const Detail = () => {
                 <Box
                   w="100%"
                   pb="120px"
-                  mt={2}
+                  mt={5}
                   fontFamily="Noto Sans KR, sans-serif"
                 >
                   <Box

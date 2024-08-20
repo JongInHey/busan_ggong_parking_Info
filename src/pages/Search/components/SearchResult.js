@@ -23,6 +23,7 @@ export const SearchResult = ({ searchData, keyData, isLoading }) => {
                 mt={5}
                 lineHeight="23px"
                 bgColor={"#f9f9f9"}
+                boxShadow="0 2px 6px rgba(0,0,0,0.1)"
               >
                 <Link to={`/detail/${data.id}`}>
                   <Heading fontWeight="bold" fontSize="18px">

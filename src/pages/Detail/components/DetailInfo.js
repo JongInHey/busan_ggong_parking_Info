@@ -10,6 +10,7 @@ export const DetailInfo = ({ detailData }) => {
         mt={5}
         lineHeight="23px"
         bgColor={"#f9f9f9"}
+        boxShadow="0 2px 6px rgba(0,0,0,0.1)"
       >
         <Center>
           <Heading fontSize="28px" fontWeight="semibold" mb={3}>
@@ -96,6 +97,7 @@ export const DetailInfo = ({ detailData }) => {
         mt={5}
         lineHeight="23px"
         bgColor={"#f9f9f9"}
+        boxShadow="0 2px 6px rgba(0,0,0,0.1)"
       >
         <Box
           w="90px"
