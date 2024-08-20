@@ -107,7 +107,7 @@ export const Search = () => {
 
           {searchData?.length === 0 && nullKeyword && (
             <Box mt={8}>
-              <Text color="gray.500">일치하는 검색 결과가 없습니다.</Text>
+              <Text color="gray.400">일치하는 검색 결과가 없습니다.</Text>
             </Box>
           )}
 

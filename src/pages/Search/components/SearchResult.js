@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export const SearchResult = ({ searchData, keyData, isLoading }) => {
   return (
     <Box mt={8} wordBreak="keep-all">
-      <Text fontSize="lg" fontWeight="bold">
+      <Text fontSize="15px" fontWeight="light" opacity="0.7">
         {keyData} 검색 결과 입니다!
       </Text>
 
@@ -38,14 +38,37 @@ export const SearchResult = ({ searchData, keyData, isLoading }) => {
                       부산광역시 {data.jibunAddr}
                     </Text>
                   )}
-                  <Text fontSize="15px" fontWeight="medium" mt="10px">
+                  <Text
+                    fontSize="15px"
+                    fontWeight="semibold"
+                    mt="10px"
+                    fontFamily="Noto Sans KR, sans-serif"
+                  >
                     {data.tenMin !== "-" ? (
                       <>
-                        {data.pkBascTime}분 당 {data.tenMin}원
+                        <Box
+                          bgColor="#ffa825"
+                          color="#fff"
+                          w={28}
+                          p={1}
+                          textAlign="center"
+                          borderRadius={20}
+                        >
+                          {data.pkBascTime}분 당 {data.tenMin}원
+                        </Box>
                       </>
                     ) : (
                       <>
-                        {data.pkBascTime}분 당 {data.tenMin}
+                        <Box
+                          bgColor="#ffa825"
+                          color="#fff"
+                          w={28}
+                          p={1}
+                          textAlign="center"
+                          borderRadius={20}
+                        >
+                          {data.pkBascTime}분 당 {data.tenMin}
+                        </Box>
                       </>
                     )}
                   </Text>
