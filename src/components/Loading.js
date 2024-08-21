@@ -1,4 +1,4 @@
-import { Container } from "@chakra-ui/react";
+import { Container, Text } from "@chakra-ui/react";
 import { ClimbingBoxLoader } from "react-spinners";
 
 export const Loading = () => {
@@ -11,8 +11,12 @@ export const Loading = () => {
       display="flex"
       alignItems="center"
       justifyContent="center"
+      flexDirection="column"
       bgColor="#f9f9f9"
     >
+      <Text mb={10} fontSize="18px" fontWeight="700" color="#ffa825">
+        위치를 찾고 있는 중입니다 ( •̀ ω •́ )✧
+      </Text>
       <ClimbingBoxLoader color="#ffa825" size={30} />
     </Container>
   );

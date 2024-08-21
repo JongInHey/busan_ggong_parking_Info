@@ -72,8 +72,8 @@ export const Footer = ({ onPanTo }) => {
             <IconButton
               icon={<MdOutlineSearch />}
               isRound={true}
-              boxSize={10}
-              fontSize="34px"
+              boxSize={8}
+              fontSize="26px"
               color={"white"}
               bg={"#ffa825"}
               _hover={{ bg: "#ffbf5f" }}
