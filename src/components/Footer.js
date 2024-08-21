@@ -12,6 +12,7 @@ import {
   DrawerOverlay,
   Box,
   useDisclosure,
+  Image,
 } from "@chakra-ui/react";
 import {
   MdOutlineSearch,
@@ -35,6 +36,9 @@ export const Footer = ({ onPanTo }) => {
       onPanTo();
     }
   };
+  const imgurl =
+    "https://search.pstatic.net/sunny/?src=https%3A%2F%2Fimg.lfmall.co.kr%2Ffile%2FWAS%2Fdisplay%2FPlanning%2F70703%2Fw_1_240101.jpg&type=sc960_832";
+
   return (
     <Center>
       <Container
@@ -115,21 +119,35 @@ export const Footer = ({ onPanTo }) => {
               <AiOutlineCar />
             </DrawerHeader>
 
-            <DrawerBody fontSize={"20px"} fontWeight={700} pt={16}>
-              <Box>
+            <DrawerBody
+              fontSize={"20px"}
+              fontWeight={700}
+              pt={10}
+              pr={0}
+              pl={0}
+            >
+              <Box ml="24px">
                 <Link to={routes.home} onClick={onClose}>
                   HOME
                 </Link>
               </Box>
-              <Box m="24px 0">
+              <Box m="24px 0" ml="24px">
                 <Link to={routes.search} onClick={onClose}>
                   SEARCH
                 </Link>
               </Box>
-              <Box>
+              <Box ml="24px">
                 <Link to={routes.favor} onClick={onClose}>
                   MY PARKING
                 </Link>
+              </Box>
+              <Box w="100%" h="250px" mt="40px">
+                <Image
+                  src={imgurl}
+                  alt="친구초대 이벤트"
+                  h="100%"
+                  objectFit="cover"
+                ></Image>
               </Box>
             </DrawerBody>
 
