@@ -156,7 +156,7 @@ export const Footer = ({ onPanTo }) => {
               fontSize={"14px"}
               bgColor="#f7f7f7"
             >
-              &copy; 2024․ JongInHey.
+              &copy; 2024. JongInHey.
             </DrawerFooter>
           </DrawerContent>
         </Drawer>
