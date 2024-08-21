@@ -8,6 +8,7 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { useCallback, useState } from "react";
 import { useCurrentPos } from "./lib/useCurrentPos";
+import { Favor } from "./pages/Favor/Favor";
 
 const { kakao } = window;
 
@@ -36,6 +37,7 @@ function Router() {
         ></Route>
         <Route path={routes.detail} element={<Detail />}></Route>
         <Route path={routes.search} element={<Search />}></Route>
+        <Route path={routes.favor} element={<Favor />}></Route>
         <Route path="/*" element={<PageNotFound />}></Route>
       </Routes>
       <Footer onPanTo={panTo} />

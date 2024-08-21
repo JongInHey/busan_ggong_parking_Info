@@ -3,13 +3,15 @@ import { PageTitle } from "../../components/PageTitle";
 import { allParkingInfo } from "../../api";
 import { Loading } from "../../components/Loading";
 import { useParams } from "react-router-dom";
-import { Box, Container, Heading, Text } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading, Text } from "@chakra-ui/react";
 import { Map } from "./components/Map";
 import { DetailInfo } from "./components/DetailInfo";
+import { MdOutlineStar, MdOutlineStarBorder } from "react-icons/md";
 
 export const Detail = () => {
   const [detailData, setDetailData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [isOnStar, setIsOnStar] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {
@@ -25,14 +27,42 @@ export const Detail = () => {
         const findData = dataAddUniqueIds.find(
           (item) => item.id === Number(id)
         );
+
+        const storagedData = JSON.parse(localStorage.getItem("favor")) || [];
+        const isOnOff = storagedData.some((item) => item.id === detailData.id);
+
         setDetailData(findData);
+        setIsOnStar(isOnOff);
         setIsLoading(false);
       } catch (error) {
         console.log(error);
       }
     })();
-  }, [id]);
+  }, [id, detailData.id]);
   // console.log(detailData);
+
+  const handleFavor = () => {
+    const favorData = JSON.parse(localStorage.getItem("favor")) || [];
+
+    const isAlreadyData = favorData.some((item) => item.id === detailData.id);
+
+    if (!isAlreadyData) {
+      const addFavorData = [...favorData, detailData];
+
+      localStorage.setItem("favor", JSON.stringify(addFavorData));
+      setIsOnStar(true);
+    }
+  };
+  const handleCancel = () => {
+    const favorData = JSON.parse(localStorage.getItem("favor")) || [];
+
+    const updateCancelData = favorData.filter(
+      (item) => item.id !== detailData.id
+    );
+
+    localStorage.setItem("favor", JSON.stringify(updateCancelData));
+    setIsOnStar(false);
+  };
   return (
     <>
       {isLoading ? (
@@ -40,12 +70,7 @@ export const Detail = () => {
       ) : (
         <>
           <PageTitle title={"Detail"} />
-          <Container
-            maxW={"450px"}
-            h={"100vh"}
-            margin={"0 auto"}
-            wordBreak="keep-all"
-          >
+          <Container maxW={"450px"} h={"100vh"} margin={"0 auto"}>
             <Box
               w={"100%"}
               h={"100%"}
@@ -61,16 +86,33 @@ export const Detail = () => {
                 bgColor={"#f9f9f9"}
                 boxShadow="0 2px 6px rgba(0,0,0,0.1)"
               >
-                <Heading fontWeight="bold" fontSize="18px">
-                  {detailData.pkNam}
-                </Heading>
+                <Flex justifyContent="space-between" alignItems="center">
+                  <Heading fontWeight="bold" fontSize="18px">
+                    {detailData.pkNam}
+                  </Heading>
+                  {isOnStar ? (
+                    <MdOutlineStar
+                      fontSize="28px"
+                      color="#ffa825"
+                      cursor="pointer"
+                      onClick={handleCancel}
+                    />
+                  ) : (
+                    <MdOutlineStarBorder
+                      fontSize="28px"
+                      color="#ffa825"
+                      cursor="pointer"
+                      onClick={handleFavor}
+                    />
+                  )}
+                </Flex>
 
                 {detailData.jibunAddr === "-" || detailData.jibunAddr === "" ? (
-                  <Text fontSize="14px" mt="5px">
+                  <Text fontSize="14px" mt="5px" wordBreak="keep-all">
                     부산광역시 {detailData.doroAddr}
                   </Text>
                 ) : (
-                  <Text fontSize="14px" mt="5px">
+                  <Text fontSize="14px" mt="5px" wordBreak="keep-all">
                     부산광역시 {detailData.jibunAddr}
                   </Text>
                 )}

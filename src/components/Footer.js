@@ -79,14 +79,16 @@ export const Footer = ({ onPanTo }) => {
               _hover={{ bg: "#ffbf5f" }}
             />
           </Link>
-          <IconButton
-            icon={<MdOutlineStarBorder />}
-            variant="ghost"
-            boxSize={6}
-            fontSize="24px"
-            color={"gray.500"}
-            cursor={"pointer"}
-          />
+          <Link to={routes.favor}>
+            <IconButton
+              icon={<MdOutlineStarBorder />}
+              variant="ghost"
+              boxSize={6}
+              fontSize="24px"
+              color={"gray.500"}
+              cursor={"pointer"}
+            />
+          </Link>
           <IconButton
             icon={<MdOutlineMenu />}
             variant="ghost"
@@ -114,14 +116,19 @@ export const Footer = ({ onPanTo }) => {
             </DrawerHeader>
 
             <DrawerBody fontSize={"20px"} fontWeight={700} pt={16}>
-              <Box marginBottom={7}>
+              <Box>
                 <Link to={routes.home} onClick={onClose}>
                   HOME
                 </Link>
               </Box>
-              <Box>
+              <Box m="24px 0">
                 <Link to={routes.search} onClick={onClose}>
                   SEARCH
+                </Link>
+              </Box>
+              <Box>
+                <Link to={routes.favor} onClick={onClose}>
+                  MY PARKING
                 </Link>
               </Box>
             </DrawerBody>
