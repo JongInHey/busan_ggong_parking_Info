@@ -9,9 +9,9 @@
 - [x] Helmet 타이틀 설정
 - [x] Loading 설정
 - [x] 컴포넌트, 폴더 설정
-- [] 각 페이지 ui구성 & 설정
-- [] 404 page 구성
-- [] deploy
+- [x] 각 페이지 ui구성 & 설정
+- [x] 404 page 구성
+- [x] deploy
 
 ### 설치할 npm
 
