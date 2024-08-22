@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/busan_ggong_parking_Info/static/js/main.76668151.js",
+    "main.js": "/busan_ggong_parking_Info/static/js/main.d87fd361.js",
     "index.html": "/busan_ggong_parking_Info/index.html",
-    "main.76668151.js.map": "/busan_ggong_parking_Info/static/js/main.76668151.js.map"
+    "main.d87fd361.js.map": "/busan_ggong_parking_Info/static/js/main.d87fd361.js.map"
   },
   "entrypoints": [
-    "static/js/main.76668151.js"
+    "static/js/main.d87fd361.js"
   ]
 }
