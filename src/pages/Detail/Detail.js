@@ -39,7 +39,6 @@ export const Detail = () => {
       }
     })();
   }, [id, detailData.id]);
-  // console.log(detailData);
 
   const handleFavor = () => {
     const favorData = JSON.parse(localStorage.getItem("favor")) || [];

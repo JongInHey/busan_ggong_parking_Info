@@ -26,7 +26,6 @@ export const Home = ({ onMapLoad }) => {
       }
     })();
   }, []);
-  // console.log(parkAllData);
 
   return (
     <>

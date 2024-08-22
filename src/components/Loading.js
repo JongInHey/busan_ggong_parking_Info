@@ -14,10 +14,10 @@ export const Loading = () => {
       flexDirection="column"
       bgColor="#f9f9f9"
     >
-      <Text mb={10} fontSize="18px" fontWeight="700" color="#ffa825">
+      <Text mb={10} fontSize="18px" fontWeight="700">
         위치를 찾고 있는 중입니다 ( •̀ ω •́ )✧
       </Text>
-      <ClimbingBoxLoader color="#ffa825" size={30} />
+      <ClimbingBoxLoader color="#ffa825" size={15} />
     </Container>
   );
 };

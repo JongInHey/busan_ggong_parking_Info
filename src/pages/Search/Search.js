@@ -52,7 +52,6 @@ export const Search = () => {
     }
   };
   const nullKeyword = watch("keyword");
-  // console.log(searchData);
 
   return (
     <>
