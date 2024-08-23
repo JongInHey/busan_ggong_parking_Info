@@ -64,6 +64,15 @@
 - 포인트 컬러 - `#ffa825` || `rgb(255, 168, 37)` 사용
 - 폰트 (구글 웹 폰트) - `Noto Sans KR, sans-serif` || `Noto Serif KR, serif` 사용
 
+<p>
+<image src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA4MjNfMTQg/MDAxNzI0Mzk4MzY4MDgz.PvLVzcG5AtTRPDIWrSzxQDJBG61D1gD6buSero9iS8Eg.VzlnF4vUWdJ2OsNtqk8Ad2wpPCczyzgYNmtYxAYDGR4g.JPEG/%EA%B2%B0%EA%B3%BC-1.jpg" alt="Home" width="234px" height="480px">
+<image src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA4MjNfNTMg/MDAxNzI0Mzk4MzY4MDY4.1l9jvT4YrI4L_G_wLEz3ozSbDEKk04k9NSQFkhgSsOAg.HkH3Vr2ICIeuNB0azYMVpsuUYF1OxSggHAz2NFVtMkEg.JPEG/%EA%B2%B0%EA%B3%BC-2.jpg" alt="Search" width="234px" height="480px">
+<image src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA4MjNfMjY0/MDAxNzI0Mzk4MzY4MDgz.rjbX8LrkuMo5Ynx4IEMFDG4Vfstx1Yf-g7KzqtW4h9og.uJ29_LqUg3Eh5bYHJqfnr8AGWAYqXxk8Fou6YVZCbSog.JPEG/%EA%B2%B0%EA%B3%BC-3.jpg" alt="favor" width="234px" height="480px">
+<image src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA4MjNfMTIw/MDAxNzI0Mzk4MzY4MDcw.A5O6NJ22_a7YYuFzrmoUov1IwccseDH2U_-7oA89msMg.kVTqb_ad-Oh7IyZzHt0LSoJ8skHXUjiI5_BGFgIsEogg.JPEG/%EA%B2%B0%EA%B3%BC-4.jpg" alt="menu" width="234px" height="480px">
+<image src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA4MjNfODcg/MDAxNzI0Mzk4MzY4MDgz.aSkA2xG37cmdVpc9RUZOidR3dCWnyrMKaz8dnq6KqSUg.kDizt2h8QL0_QV-4uVIY8V3fWunG_L8mB6uPL_jSvbUg.JPEG/%EA%B2%B0%EA%B3%BC-5.jpg" alt="Detail" width="234px" height="600px">
+
+</p>
+
 1. 메인 페이지
 
    - 내 현재 위치를 지도 중심 좌표로 지정
