@@ -16,10 +16,6 @@
 - node.js
 - node-fetch
 - Chakra UI
-- react-icons
-- react-hook-form
-- react-spinners
-- localStorage
 - git / github
 
 ## ⏰개발 기간
